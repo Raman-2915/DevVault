@@ -1,0 +1,35 @@
+{
+  "name": "devvault",
+  "version": "1.0.0",
+  "description": "AI-Powered Developer Knowledge & Project Intelligence CLI",
+  "main": "src/index.js",
+  "bin":{
+    "DevVault":"src/index.js"
+  },
+   "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test":"node --test"
+  },
+  "keywords": [
+    "developer-tools",
+    "cli",
+    "knowledge-management",
+    "developer-productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "uuid": "^14.0.2",
+    "yargs": "^18.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
