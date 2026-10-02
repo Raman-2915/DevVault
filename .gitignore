@@ -35,3 +35,5 @@ coverage/
 Thumbs.db
 # Generated reports
 reports/
+# Generated npm package archives
+*.tgz
