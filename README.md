@@ -43,7 +43,7 @@ npm --version
 Clone the repository and enter its directory:
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/Raman-2915/DevVault
 cd DevVault
 npm install
 ```
