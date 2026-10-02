@@ -4,7 +4,7 @@
   "description": "AI-Powered Developer Knowledge & Project Intelligence CLI",
   "main": "src/index.js",
   "bin":{
-    "DevVault":"src/index.js"
+    "devvault":"src/index.js"
   },
    "files": [
     "src",
