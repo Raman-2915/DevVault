@@ -1,0 +1,49 @@
+{
+  "name": "devvault",
+  "version": "3.0.0",
+  "description": "AI-Powered Developer Knowledge & Project Intelligence CLI",
+  "main": "src/index.js",
+  "bin": {
+    "devvault": "src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test",
+    "backend": "npm --prefix backend start",
+    "dashboard:dev": "npm --prefix dashboard run dev",
+    "dashboard:build": "npm --prefix dashboard run build",
+    "setup": "npm install && npm --prefix backend install && npm --prefix dashboard install",
+    "ai:check": "npm --prefix backend run check:ai",
+    "build:cli": "node scripts/build-cli-package.js",
+    "build": "npm run build:cli && npm --prefix dashboard run build"
+  },
+  "keywords": [
+    "developer-tools",
+    "cli",
+    "knowledge-management",
+    "developer-productivity",
+    "rag",
+    "semantic-search",
+    "embeddings",
+    "mongodb",
+    "express",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "uuid": "^14.0.2",
+    "yargs": "^18.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18"
+  }
+}

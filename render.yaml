@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: devvault
+    runtime: node
+    # --include=dev: Vite is a devDependency and Render sets NODE_ENV=production during builds.
+    buildCommand: npm run build:cli && npm --prefix backend install && npm --prefix dashboard install --include=dev && npm --prefix dashboard run build
+    startCommand: node backend/src/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_API_KEY
+        sync: false
+      - key: APP_URL
+        sync: false   # set to your https://<name>.onrender.com address after the first deploy
+      - key: BREVO_API_KEY
+        sync: false
+      - key: EMAIL_FROM_ADDRESS
+        sync: false
+      - key: AI_PROVIDER
+        value: gemini

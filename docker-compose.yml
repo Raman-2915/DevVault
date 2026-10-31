@@ -1,0 +1,20 @@
+# Local full stack: API + dashboard + MongoDB.   Usage:  docker compose up --build
+# Requires AI_API_KEY and JWT_SECRET in your shell or a root-level .env file.
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+  app:
+    build: .
+    ports: ["5000:5000"]
+    depends_on: [mongo]
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/devvault
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET (32+ chars)}
+      BREVO_API_KEY: ${BREVO_API_KEY:-}
+      EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS:-}
+      APP_URL: ${APP_URL:-http://localhost:5000}
+      AI_PROVIDER: ${AI_PROVIDER:-gemini}
+      AI_API_KEY: ${AI_API_KEY:-}
+volumes:
+  mongo-data:
